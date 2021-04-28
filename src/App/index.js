@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'reactstrap';
 import getWeather from '../helpers/data/weatherData';
+import WeatherCard from '../WeatherCard';
 import './App.scss';
 
 function App() {
-  const [printWeather, setPrintWeather] = useState({});
+  const [weather, setWeather] = useState([]);
   const [userInput, setUserInput] = useState('');
 
   const grabWeather = () => {
     getWeather(userInput)
       .then((response) => {
-        setPrintWeather(response);
+        weather.push(response);
+        setWeather([...weather]);
       });
   };
 
@@ -24,7 +26,7 @@ function App() {
     setUserInput(e.target.value);
   };
 
-  console.warn(printWeather);
+  console.warn(weather);
 
   return (
     <div>
@@ -48,10 +50,18 @@ function App() {
       <Button
         type="submit"
         id="search-weather"
-        className="btn btn-outline-dark">
+        outline color="dark">
           Submit
       </Button>
-      </Form>`;
+      </Form>
+      <div id="card-container">
+      {weather.map((weatherObj) => (
+        <WeatherCard
+        key={weatherObj.id}
+        {...weatherObj}
+        />
+      ))}
+      </div>
     </div>
   );
 }
