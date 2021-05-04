@@ -5,7 +5,7 @@
 ## Overview
 get the weather is a simple, and beautiful, weather app. The focus is on the weather itself, with no distracting elements to draw the user away from their purpose--getting the weather.
 ## Deployed Project
-https://i.imgur.com/DxyjJla.png
+https://kf-react-weather.netlify.app/
 ## Technologies
 - React
 - Javcascript
