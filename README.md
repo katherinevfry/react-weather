@@ -13,3 +13,6 @@ https://kf-react-weather.netlify.app/
 - SASS
 - Open Weather API (tested with Postman)
 - Deployed via Netlify
+
+## Loom Walkthrough
+https://www.loom.com/share/8ec0e63b1530420381b7fa8064134ba7
